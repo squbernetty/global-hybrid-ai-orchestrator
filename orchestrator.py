@@ -6444,7 +6444,7 @@ def status(task_arg: str) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Global Hybrid AI Orchestrator v0.1"
+        description="Trusted Hybrid AI Orchestrator v0.1"
     )
 
     sub = parser.add_subparsers(dest="command", required=True)
