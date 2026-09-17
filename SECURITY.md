@@ -2,7 +2,7 @@
 
 ## Supported status
 
-The Global Hybrid AI Orchestrator is currently a public-alpha project.
+The Trusted Hybrid AI Orchestrator is currently a public-alpha project.
 
 The alpha is not represented as production-ready and should not be used for unattended consequential autonomy.
 

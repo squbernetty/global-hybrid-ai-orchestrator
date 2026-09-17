@@ -1,16 +1,75 @@
-# Global Hybrid AI Orchestrator
+# Trusted Hybrid AI Orchestrator
 
-The Global Hybrid AI Orchestrator is a policy-constrained local orchestration runtime for AI-assisted software-engineering workflows.
+**A trust-centered control plane for AI-assisted work.**
+
+AI models are treated as fallible workers, not trusted authorities. The purpose of this project is not to maximize agent autonomy or model orchestration. Its purpose is to make AI-assisted work bounded, inspectable, attributable, verifiable where possible, and subject to human authority.
+
+The runtime is intended for engineering, software development, research, deep analysis, document review, data analysis, and other knowledge-work workflows where AI output must not silently become trusted authority.
 
 The core design rule is:
 
-> The trustworthy unit is not the agent. The trustworthy unit is the verified state transition.
+> **The trustworthy unit is not the agent. The trustworthy unit is the verified state transition.**
+
+**AI proposes. Evidence verifies. Policy constrains. Humans retain authority.**
 
 The runtime separates supervisor requests, worker-model execution, human authority, deterministic verification, evidence, task state, and provenance.
 
+## Trust model
+
+Trust is established through process and evidence rather than model confidence.
+
+The runtime is designed around:
+
+- **policy-constrained authority** — workers may propose or execute bounded work but do not inherit approval authority;
+- **human oversight** — consequential transitions remain subject to explicit human authority;
+- **deterministic verification** — tests, compilation, schemas, calculations, static checks, and diff integrity are used where deterministic evidence is available;
+- **evidence-grounded review** — judgment-heavy work can require source grounding, explicit assumptions, challenge, adjudication, and human review rather than pretending certainty is deterministic;
+- **regression discipline** — qualification harnesses detect behavioral regressions before changes are accepted;
+- **static analysis** — tools such as Ruff and Python compilation provide machine-checkable quality gates for software workflows;
+- **evidence and provenance** — execution, verification, decisions, sources, and state transitions can be recorded and inspected;
+- **failure containment** — timeout, cancellation, malformed output, transport failure, stalled execution, or verification failure lead to controlled states rather than silent continuation;
+- **controlled remediation and re-verification** — proposed corrections must pass back through the verification path before they can become trusted output.
+
+## What this is not
+
+This project is not primarily:
+
+- a multi-agent framework;
+- a prompt-routing library;
+- an autonomous coding agent;
+- an LLM gateway;
+- a replacement for CI/CD;
+- a system that assumes model output is trustworthy.
+
+Model orchestration is a mechanism. **Trustworthy AI-assisted work is the objective.**
+
+## Verification depends on the task
+
+Not every task can be verified in the same way.
+
+For deterministic or machine-checkable work, the trust path may include:
+
+- unit and regression tests;
+- compilation;
+- static analysis;
+- schema validation;
+- deterministic calculations;
+- diff and repository-integrity checks.
+
+For analytical or judgment-heavy work, the trust path may instead include:
+
+- source grounding and provenance;
+- evidence packets;
+- explicit assumptions and uncertainty;
+- adversarial challenge;
+- structured adjudication;
+- human review and approval.
+
+The runtime should not present judgment-heavy conclusions as deterministically verified merely because an AI model produced them.
+
 ## Release status
 
-This repository currently implements the **v0.1 runtime contract** and is being prepared as a **public alpha**.
+This repository implements the **v0.1 runtime contract** and has been published as a **public alpha**, beginning with `v0.1.0-alpha.1`.
 
 The alpha is intentionally constrained:
 

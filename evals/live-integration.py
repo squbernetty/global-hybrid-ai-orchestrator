@@ -360,7 +360,7 @@ def test_live_external_request_subprocess() -> None:
             traces_dir.rmdir()
 
 def main() -> int:
-    print("Global Hybrid AI Orchestrator Live Integration")
+    print("Trusted Hybrid AI Orchestrator Live Integration")
     print("N11 release qualification")
     print("============================================")
 
