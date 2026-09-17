@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: ci
+    runs-on: windows-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python 3.11.9
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.11.9'
+
+      - name: Install qualified dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --disable-pip-version-check -r requirements.txt
+          python -m pip install --disable-pip-version-check ruff==0.16.8
+
+      - name: Ruff
+        shell: pwsh
+        run: |
+          python -m ruff check `
+            orchestrator.py `
+            evals/runtime-regression.py `
+            evals/live-integration.py
+
+      - name: Python compile
+        shell: pwsh
+        run: |
+          python -m py_compile `
+            orchestrator.py `
+            evals/runtime-regression.py `
+            evals/live-integration.py
+
+      - name: Deterministic regression
+        shell: pwsh
+        run: |
+          python evals/runtime-regression.py
+
+      - name: Whitespace integrity
+        shell: pwsh
+        run: |
+          if ("${{ github.event_name }}" -eq "pull_request") {
+              git diff --check `
+                  "${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }}"
+          }
+          else {
+              git show --check --format="" HEAD
+          }
+
+      # N11 live integration is intentionally excluded from GitHub Actions.
+      # It requires a qualified local LM Studio runtime and remains a
+      # human-controlled release qualification gate.
