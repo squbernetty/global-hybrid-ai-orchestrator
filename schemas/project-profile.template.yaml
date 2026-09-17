@@ -1,0 +1,83 @@
+schema_version: "1.0"
+
+project:
+  name: UNKNOWN
+  path: UNKNOWN
+  purpose: UNKNOWN
+  lifecycle_stage: UNKNOWN
+
+technology:
+  languages: []
+  runtimes: []
+  package_manager: UNKNOWN
+  frameworks: []
+  primary_tools: []
+
+execution:
+  normal_entry_points: []
+  test_commands: []
+  lint_commands: []
+  build_commands: []
+  safe_commands: []
+  prohibited_commands: []
+
+architecture:
+  summary: UNKNOWN
+  critical_components: []
+  external_dependencies: []
+  trust_boundaries: []
+  persistent_state: []
+
+risk:
+  overall_level: UNKNOWN
+  security_sensitive: UNKNOWN
+  safety_sensitive: UNKNOWN
+  financial_consequence: UNKNOWN
+  production_impact: UNKNOWN
+  sensitive_data: UNKNOWN
+
+authority:
+  autonomous_read: []
+  autonomous_verify: []
+  human_approval_modify: []
+  human_approval_consequential: []
+
+verification:
+  required_checks: []
+  release_checks: []
+  deterministic_sources: []
+  known_expensive_tests: []
+
+constraints:
+  non_goals: []
+  known_limitations: []
+  compatibility_requirements: []
+  protected_areas: []
+  protected_invariants: []
+
+model_routing:
+  local_worker_provider_id: lm_studio
+  qwen_suitable_for: []
+  gemma_suitable_for: []
+  terra_suitable_for: []
+  luna_suitable_for: []
+  sol_high_triggers: []
+
+budget:
+  supervisor_effort: UNKNOWN
+  max_worker_calls: UNKNOWN
+  max_parallel_workers: UNKNOWN
+  local_worker_timeout_seconds: UNKNOWN
+  cloud_worker_policy: UNKNOWN
+  context_policy: minimum_sufficient
+
+observability:
+  trace_required: UNKNOWN
+  checkpoint_required: UNKNOWN
+
+project_state:
+  current_branch: UNKNOWN
+  known_issues: []
+  resolved_issues: []
+  active_work: UNKNOWN
+  last_verified: UNKNOWN

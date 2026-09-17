@@ -1,0 +1,16 @@
+.venv/
+state/
+traces/
+.idea/
+__pycache__/
+*.pyc
+
+cache/
+
+# Local project profiles contain machine- and project-specific runtime state.
+projects/*.yaml
+!projects/.gitkeep
+
+# Behavioral qualification results may contain project-specific evidence.
+evals/results/*.yaml
+!evals/results/.gitkeep

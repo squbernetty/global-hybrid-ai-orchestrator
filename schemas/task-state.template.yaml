@@ -1,0 +1,70 @@
+schema_version: "1.0"
+
+task:
+  task_id: UNKNOWN
+  objective: UNKNOWN
+  active_project: UNKNOWN
+  class: UNKNOWN
+  risk_level: UNKNOWN
+  reasoning_mode: medium
+  status: INTAKE
+
+plan:
+  steps: []
+  assumptions: []
+
+evidence:
+  observed: []
+  verified: []
+  supported: []
+  unverified: []
+  disputed: []
+  rejected: []
+
+invariants:
+  applicable: []
+  verified: []
+  violated: []
+
+delegation:
+  pending: []
+  completed: []
+  failed: []
+  parallel_groups: []
+
+verification:
+  required: []
+  completed: []
+
+approvals:
+  required: []
+  granted: []
+  rejected: []
+
+uncertainty:
+  open_questions: []
+  unresolved_conflicts: []
+
+budget:
+  worker_calls_used: 0
+  parallel_workers_active: 0
+  local_runtime_seconds_used: 0
+  cloud_worker_calls_used: 0
+
+trace:
+  policy_version: '1.1'
+  project_profile_version: UNKNOWN
+  supervisor_model: UNKNOWN
+  reasoning_transitions: []
+  tool_calls: []
+  delegations: []
+  evidence_promotions: []
+  replans: []
+  human_decisions: []
+  final_status: UNKNOWN
+
+checkpoint:
+  last_checkpoint: UNKNOWN
+  resume_from: UNKNOWN
+
+next_action: UNKNOWN
