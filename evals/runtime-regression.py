@@ -1571,7 +1571,7 @@ def test_n10_reference_protocol() -> None:
 
 def main() -> int:
     print("Trusted Hybrid AI Orchestrator Runtime Regression")
-    print("N11 deterministic regression harness")
+    print("N4-N10 deterministic regression harness")
     print("=============================================")
 
     tests = (
