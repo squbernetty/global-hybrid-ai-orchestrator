@@ -109,7 +109,7 @@ Other environments may work but are not yet part of the qualified baseline.
 ## Repository layout
 
 ```text
-.ai-orchestrator/
+trusted-hybrid-ai-orchestrator/
 ├── orchestrator.py
 ├── POLICY.md
 ├── global-policy.yaml
