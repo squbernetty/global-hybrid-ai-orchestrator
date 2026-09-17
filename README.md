@@ -382,6 +382,7 @@ The current alpha does not claim:
 - automatic project-profile generation;
 - automatic task-state initialization;
 - a network-hosted external supervisor service;
+- replay/idempotency enforcement for external supervisor `request_id` values; callers must not assume at-most-once execution;
 - production-readiness or unattended consequential autonomy.
 
 These constraints are deliberate and should not be silently bypassed.
